@@ -4,13 +4,19 @@
 
 package com.mycompany.librarymanagementsystem;
 
-/**
- *
- * @author Samadi Poornima
- */
+/** Minimal entry point; a future Swing UI can call the domain classes directly. */
 public class Librarymanagementsystem {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Library library = new Library();
+        library.addItem(new Book(101, "Clean Code", "Robert C. Martin", "978-0132350884"));
+        library.addItem(new Journal(201, "Science Today", 12, 3));
+
+        LibraryItem item = library.searchItem(101);
+        if (item != null) {
+            library.borrowItem(101);
+            System.out.println(item.getDetails());
+            System.out.println("Fine for 3 overdue days: " + item.calculateFine(3));
+        }
     }
 }
