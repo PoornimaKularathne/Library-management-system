@@ -18,6 +18,7 @@ public class Members extends javax.swing.JFrame {
      * Creates new form Members
      */
     public Members() {
+        setUndecorated(true);
         initComponents();
     }
 
@@ -89,30 +90,31 @@ public class Members extends javax.swing.JFrame {
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 200, -1));
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 201, 21));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Address");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Email");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Member ID");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Phone");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         btnExit3.setBackground(new java.awt.Color(255, 0, 0));
         btnExit3.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,7 +130,12 @@ public class Members extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-        // TODO add your handling code here:
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField1.requestFocus();
     }//GEN-LAST:event_btnclearActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -140,8 +147,42 @@ public class Members extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
+        if (!isPositiveNumber(jTextField1.getText())) {
+            showValidationError("Member ID must be a positive whole number.", jTextField1);
+            return;
+        }
+        if (jTextField2.getText().trim().length() < 2) {
+            showValidationError("Enter a valid member name.", jTextField2);
+            return;
+        }
+        if (!jTextField3.getText().trim().matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
+            showValidationError("Enter a valid email address.", jTextField3);
+            return;
+        }
+        if (!jTextField4.getText().trim().matches("\\d{10}")) {
+            showValidationError("Phone number must contain exactly 10 digits.", jTextField4);
+            return;
+        }
+        if (jTextField5.getText().trim().isEmpty()) {
+            showValidationError("Address is required.", jTextField5);
+            return;
+        }
         JOptionPane.showMessageDialog(this, "Member added  Successful");
     }//GEN-LAST:event_btnregisterActionPerformed
+
+    private boolean isPositiveNumber(String value) {
+        try {
+            return Integer.parseInt(value.trim()) > 0;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private void showValidationError(String message, javax.swing.JTextField field) {
+        JOptionPane.showMessageDialog(this, message, "Invalid member details",
+                JOptionPane.WARNING_MESSAGE);
+        field.requestFocus();
+    }
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
 

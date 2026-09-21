@@ -22,6 +22,7 @@ public class Books extends javax.swing.JFrame {
      * Creates new form java
      */
     public Books() {
+        setUndecorated(true);
         initComponents();
     }
 
@@ -65,6 +66,7 @@ public class Books extends javax.swing.JFrame {
         getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
         getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
 
         btnaddbook.setText(" Add Book");
@@ -138,8 +140,51 @@ public class Books extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField10ActionPerformed
 
     private void btnaddbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddbookActionPerformed
+        if (!isPositiveNumber(jTextField6.getText())) {
+            showValidationError("Book ID must be a positive whole number.", jTextField6);
+            return;
+        }
+        if (jTextField7.getText().trim().isEmpty()) {
+            showValidationError("Book name is required.", jTextField7);
+            return;
+        }
+        if (jTextField8.getText().trim().isEmpty()) {
+            showValidationError("Author name is required.", jTextField8);
+            return;
+        }
+        if (jTextField9.getText().trim().isEmpty()) {
+            showValidationError("Category is required.", jTextField9);
+            return;
+        }
+        if (!isPositiveNumber(jTextField10.getText())) {
+            showValidationError("Quantity must be a positive whole number.", jTextField10);
+            return;
+        }
         JOptionPane.showMessageDialog(this, "Book added Successful");
     }//GEN-LAST:event_btnaddbookActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField10.setText("");
+        jTextField6.requestFocus();
+    }//GEN-LAST:event_btnclearActionPerformed
+
+    private boolean isPositiveNumber(String value) {
+        try {
+            return Integer.parseInt(value.trim()) > 0;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private void showValidationError(String message, javax.swing.JTextField field) {
+        JOptionPane.showMessageDialog(this, message, "Invalid book details",
+                JOptionPane.WARNING_MESSAGE);
+        field.requestFocus();
+    }
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
 

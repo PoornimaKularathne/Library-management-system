@@ -22,6 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form Books
      */
     public Dashboard() {
+        setUndecorated(true);
         initComponents();
     }
 

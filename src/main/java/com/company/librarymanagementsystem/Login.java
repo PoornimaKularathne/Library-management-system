@@ -18,6 +18,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        setUndecorated(true);
         initComponents();
     }
 
@@ -102,8 +103,14 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 
-    String username = txtUsername.getText();
+    String username = txtUsername.getText().trim();
     String password = new String(txtPassword.getPassword());
+
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Enter both username and password.",
+                "Missing login details", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
     if (username.equals("admin") && password.equals("1234")) {
         JOptionPane.showMessageDialog(this, "Login Successful");

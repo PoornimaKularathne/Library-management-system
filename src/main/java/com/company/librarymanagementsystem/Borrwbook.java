@@ -18,6 +18,7 @@ public class Borrwbook extends javax.swing.JFrame {
      * Creates new form Borrwbook
      */
     public Borrwbook() {
+        setUndecorated(true);
         initComponents();
     }
 
@@ -56,6 +57,7 @@ public class Borrwbook extends javax.swing.JFrame {
         getContentPane().add(btnborrowbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
         getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         btnback.setText("Back");
@@ -99,8 +101,41 @@ public class Borrwbook extends javax.swing.JFrame {
     }//GEN-LAST:event_btnbackActionPerformed
 
     private void btnborrowbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrowbookActionPerformed
-       JOptionPane.showMessageDialog(this, "Borrowed book Successful");
+        if (!isPositiveNumber(jTextField1.getText())) {
+            showValidationError("Member ID must be a positive whole number.", jTextField1);
+            return;
+        }
+        if (!isPositiveNumber(jTextField2.getText())) {
+            showValidationError("Book ID must be a positive whole number.", jTextField2);
+            return;
+        }
+        if (!isPositiveNumber(jTextField3.getText())) {
+            showValidationError("Borrow ID must be a positive whole number.", jTextField3);
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Borrowed book Successful");
     }//GEN-LAST:event_btnborrowbookActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField1.requestFocus();
+    }//GEN-LAST:event_btnclearActionPerformed
+
+    private boolean isPositiveNumber(String value) {
+        try {
+            return Integer.parseInt(value.trim()) > 0;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private void showValidationError(String message, javax.swing.JTextField field) {
+        JOptionPane.showMessageDialog(this, message, "Invalid borrow details",
+                JOptionPane.WARNING_MESSAGE);
+        field.requestFocus();
+    }
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
