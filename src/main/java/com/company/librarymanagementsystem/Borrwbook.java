@@ -4,6 +4,8 @@
  */
 package com.company.librarymanagementsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Samadi Poornima
@@ -29,95 +31,86 @@ public class Borrwbook extends javax.swing.JFrame {
     private void initComponents() {
 
         lblborrowbook = new javax.swing.JLabel();
-        txtmemberid = new javax.swing.JTextField();
-        txtbookid = new javax.swing.JTextField();
-        txtborrowdate = new javax.swing.JTextField();
         btnborrowbook = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
         btnback = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblborrowbook.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblborrowbook.setForeground(new java.awt.Color(255, 255, 255));
         lblborrowbook.setText("Borrow Book");
-
-        txtmemberid.setText("Member ID");
-
-        txtbookid.setText("Book ID");
-        txtbookid.addActionListener(this::txtbookidActionPerformed);
-
-        txtborrowdate.setText("Borrow Date");
-        txtborrowdate.addActionListener(this::txtborrowdateActionPerformed);
+        getContentPane().add(lblborrowbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
         btnborrowbook.setText("Borrow Book");
         btnborrowbook.addActionListener(this::btnborrowbookActionPerformed);
+        getContentPane().add(btnborrowbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         btnclear.setText("Clear");
+        getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         btnback.setText("Back");
         btnback.addActionListener(this::btnbackActionPerformed);
+        getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 200, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtbookid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtmemberid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtborrowdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnborrowbook)
-                            .addComponent(lblborrowbook)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(btnclear)
-                        .addGap(82, 82, 82)
-                        .addComponent(btnback)))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblborrowbook)
-                .addGap(18, 18, 18)
-                .addComponent(txtmemberid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(txtbookid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(txtborrowdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(btnborrowbook)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnclear)
-                    .addComponent(btnback))
-                .addGap(19, 19, 19))
-        );
+        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 200, 20));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 200, 20));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Borrow ID");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Book ID");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Member ID");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+
+        btnExit.setBackground(new java.awt.Color(255, 0, 0));
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("X");
+        btnExit.addActionListener(this::btnExitActionPerformed);
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/company/librarymanagementsystem/Library.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtbookidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbookidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtbookidActionPerformed
-
-    private void txtborrowdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtborrowdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtborrowdateActionPerformed
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnbackActionPerformed
 
     private void btnborrowbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrowbookActionPerformed
-        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(this, "Borrowed book Successful");
     }//GEN-LAST:event_btnborrowbookActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,12 +138,17 @@ public class Borrwbook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnborrowbook;
     private javax.swing.JButton btnclear;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblborrowbook;
-    private javax.swing.JTextField txtbookid;
-    private javax.swing.JTextField txtborrowdate;
-    private javax.swing.JTextField txtmemberid;
     // End of variables declaration//GEN-END:variables
 }

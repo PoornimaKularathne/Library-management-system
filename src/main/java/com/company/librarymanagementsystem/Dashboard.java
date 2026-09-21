@@ -1,21 +1,27 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.Books to edit this template
  */
-package Dashboard;
+package com.company.librarymanagementsystem;
+
+import com.company.librarymanagementsystem.Books;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Samadi Poornima
  */
-public class java extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(java.class.getName());
+    private static final Logger logger = Logger.getLogger(Dashboard.class.getName());
 
     /**
-     * Creates new form java
+     * Creates new form Books
      */
-    public java() {
+    public Dashboard() {
         initComponents();
     }
 
@@ -28,80 +34,128 @@ public class java extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton3 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnExit1 = new javax.swing.JButton();
         txtusername = new javax.swing.JLabel();
-        txtbooks = new javax.swing.JTextField();
-        txtborrow = new javax.swing.JTextField();
-        txtreports = new javax.swing.JTextField();
-        txtvariables = new javax.swing.JTextField();
-        txtreturn = new javax.swing.JTextField();
-        txtlogout = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        btnExit2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        jButton3.setText("jButton3");
+
+        btnExit.setBackground(new java.awt.Color(255, 0, 0));
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("X");
+        btnExit.addActionListener(this::btnExitActionPerformed);
+
+        btnExit1.setBackground(new java.awt.Color(255, 0, 0));
+        btnExit1.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit1.setText("X");
+        btnExit1.addActionListener(this::btnExit1ActionPerformed);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtusername.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtusername.setForeground(new java.awt.Color(255, 255, 255));
         txtusername.setText("Library Management System");
+        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
-        txtbooks.setText("Books");
-        txtbooks.addActionListener(this::txtbooksActionPerformed);
+        jButton1.setText("Books");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
-        txtborrow.setText("Borrow");
+        jButton2.setText("Members");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, -1));
 
-        txtreports.setText("Reports");
+        jButton4.setText("Borrow");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
-        txtvariables.setText("Members");
+        jButton5.setText("Return");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
 
-        txtreturn.setText("Return");
+        jButton6.setText("Report");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
-        txtlogout.setText("LogOut");
+        jButton7.setText("Logout");
+        jButton7.addActionListener(this::jButton7ActionPerformed);
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(txtusername)
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtborrow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtbooks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtreports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtvariables, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtreturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtlogout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(txtusername)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtbooks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtvariables, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtborrow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtreturn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtreports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtlogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
+        btnExit2.setBackground(new java.awt.Color(255, 0, 0));
+        btnExit2.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit2.setText("X");
+        btnExit2.setAlignmentX(1.0F);
+        btnExit2.addActionListener(this::btnExit2ActionPerformed);
+        getContentPane().add(btnExit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 0, 30, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/company/librarymanagementsystem/Library.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtbooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbooksActionPerformed
-Books books = new Books();
-books.setVisible(true);
-this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_txtbooksActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // 1. Initialize your specific Dashboard form
+Books booksWindow = new Books();
+
+// 2. Display the Dashboard window on screen
+booksWindow.setVisible(true);
+
+// 3. Close the login window to clean up system memory
+this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // 1. Initialize your specific Dashboard form
+Members membersWindow = new Members();
+
+// 2. Display the Dashboard window on screen
+membersWindow.setVisible(true);
+
+// 3. Close the login window to clean up system memory
+this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       // 1. Initialize the existing borrow-book form.
+ Borrwbook borrowbookWindow = new Borrwbook();
+
+// 2. Display the Dashboard window on screen
+borrowbookWindow.setVisible(true);
+
+// 3. Close the login window to clean up system memory
+this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit1ActionPerformed
+
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExit1ActionPerformed
+
+    private void btnExit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit2ActionPerformed
+
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExit2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,21 +174,26 @@ this.dispose();        // TODO add your handling code here:
                 }
             }
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new java().setVisible(true));
+        EventQueue.invokeLater(() -> new Dashboard().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField txtbooks;
-    private javax.swing.JTextField txtborrow;
-    private javax.swing.JTextField txtlogout;
-    private javax.swing.JTextField txtreports;
-    private javax.swing.JTextField txtreturn;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnExit1;
+    private javax.swing.JButton btnExit2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel txtusername;
-    private javax.swing.JTextField txtvariables;
     // End of variables declaration//GEN-END:variables
 }
